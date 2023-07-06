@@ -3,12 +3,13 @@ package com.app.sbend2endapplication.service.impl;
 import com.app.sbend2endapplication.registration.RegistrationRequest;
 import com.app.sbend2endapplication.repository.UserRepository;
 import com.app.sbend2endapplication.service.UserService;
+import com.app.sbend2endapplication.user.Role;
 import com.app.sbend2endapplication.user.User;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -21,7 +22,10 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public User registerUser(RegistrationRequest request) {
-        return ;
+        var user=new User(request.getFirstName(), request.getLastName(), request.getUserEmail(), request.getPassword(),
+                List.of(new Role("ROLE_USER")));
+         repository.save(user);
+        return user;
     }
     @Override
     public User findByEmail(String email) {
