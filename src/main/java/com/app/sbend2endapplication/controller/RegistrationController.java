@@ -31,6 +31,6 @@ public class RegistrationController {
         var user=service.registerUser(request);
         //here we going to the event
         publisher.publishEvent(new RegistrationCompleteEvent(user,""));
-        return "redirect:/register//registration-form?success";//redirect to the registration form
+        return "redirect:/register/registration-form?success";//redirect to the registration form
     }
 }
