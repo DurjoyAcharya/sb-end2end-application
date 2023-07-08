@@ -9,58 +9,59 @@
 <body><div class="container">
     <div class="row mt-2">
     <div th:if="${param.success}" class="alert alert-success text-center" role="alert">
-        Registration Successfully! Please Check Your Email To Complete Your registration
+        Registration Successfully!
+        Please Check Your Email To Complete Your registration.
     </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title text-center">Registration Form</h1>
-                    <form>
-                        <div class="mb-3">
-                            <label for="firstName" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="firstName"
-                                  autofocus="autofocus"
-                                   required
-                                   name="firstName" th:field="@{firstName}"
-                                   placeholder="Enter your first name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="lastName" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="lastName"
-                                  autofocus="autofocus" required
-                                   name="lastName" th:field="@{lastName}"
-                                   placeholder="Enter your last name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email"
-                                   name="userEmail" required th:field="@{userEmail}"
-                                   placeholder="Enter your email address">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password"
-                                   name="password" required th:field="@{password}"
-                                   placeholder="Enter your password">
-                        </div>
-<!--                        <div class="mb-3">-->
-<!--                            <label for="role" class="form-label">Role</label>-->
-<!--                            <select class="form-select" id="role">-->
-<!--                                <option value="">Select a role</option>-->
-<!--                                <option value="admin">Admin</option>-->
-<!--                                <option value="user">User</option>-->
-<!--                            </select>-->
-<!--                        </div>-->
-                        <div class="col text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">Registration Form</h1>
+                        <form>
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName"
+                                       autofocus="autofocus"
+                                       required
+                                       name="firstName" th:field="@{firstName}"
+                                       placeholder="Enter your first name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName"
+                                       autofocus="autofocus" required
+                                       name="lastName" th:field="@{lastName}"
+                                       placeholder="Enter your last name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email"
+                                       name="userEmail" required th:field="@{userEmail}"
+                                       placeholder="Enter your email address">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                       name="password" required th:field="@{password}"
+                                       placeholder="Enter your password">
+                            </div>
+                            <!--                        <div class="mb-3">-->
+                            <!--                            <label for="role" class="form-label">Role</label>-->
+                            <!--                            <select class="form-select" id="role">-->
+                            <!--                                <option value="">Select a role</option>-->
+                            <!--                                <option value="admin">Admin</option>-->
+                            <!--                                <option value="user">User</option>-->
+                            <!--                            </select>-->
+                            <!--                        </div>-->
+                            <div class="col text-center">
 
                             <span>Registered already? <a href="/" th:href="@{authenticate/login-form}">
                                 Login
                             </a></span><br>
-                            <button type="submit" class="btn btn-primary ">Register</button>
-                        </div>
-                    </form>
+                                <button type="submit" class="btn btn-primary ">Register</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
