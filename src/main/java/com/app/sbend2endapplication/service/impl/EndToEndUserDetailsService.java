@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 public class EndToEndUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        return userRepository.findByEmail(email)
+    public UserDetails loadUserByUsername(String userEmail) throws UsernameNotFoundException {
+        return userRepository.findByuserEmail(userEmail)
                 .map(EndToEndUserDetails::new)
                 .orElseThrow(()->new UsernameNotFoundException("User Not Found"));
     }

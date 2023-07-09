@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,15 +25,18 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public User registerUser(RegistrationRequest request) {
-        var user=new User(request.getFirstName(), request.getLastName(), request.getUserEmail(),
+        var user=new User(
+                request.getFirstName(),
+                request.getLastName(),
+                request.getUserEmail(),
                 passwordEncoder.encode(request.getPassword()),
                 List.of(new Role("ROLE_USER")));
          repository.save(user);
         return user;
     }
     @Override
-    public User findByEmail(String email) {
-        return repository.findByEmail(email)
-                .orElseThrow(()->new UsernameNotFoundException("User Not Found"));
+    public Optional<User> findByUserEmail(String userEmail) {
+        return Optional.ofNullable(repository.findByuserEmail(userEmail)
+                .orElseThrow(()->new UsernameNotFoundException("User Not Found")));
     }
 }
