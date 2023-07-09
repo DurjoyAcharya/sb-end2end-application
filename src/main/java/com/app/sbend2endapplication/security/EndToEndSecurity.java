@@ -25,7 +25,10 @@ public class EndToEndSecurity {
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth->auth
-                        .requestMatchers("/","/register/**")
+                        .requestMatchers("/",
+                                "/login",
+                                "/error",
+                                "/register/**")
                         .permitAll()
                         .anyRequest()
                         .authenticated())

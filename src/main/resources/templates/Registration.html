@@ -17,32 +17,32 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title text-center">Registration Form</h1>
-                        <form>
+                        <form th:action="@{/register/registers}" method="post" th:object="${user}">
                             <div class="mb-3">
                                 <label for="firstName" class="form-label">First Name</label>
                                 <input type="text" class="form-control" id="firstName"
                                        autofocus="autofocus"
                                        required
-                                       name="firstName" th:field="@{firstName}"
+                                       name="firstName" th:field="*{firstName}"
                                        placeholder="Enter your first name">
                             </div>
                             <div class="mb-3">
                                 <label for="lastName" class="form-label">Last Name</label>
                                 <input type="text" class="form-control" id="lastName"
                                        autofocus="autofocus" required
-                                       name="lastName" th:field="@{lastName}"
+                                       name="lastName" th:field="*{lastName}"
                                        placeholder="Enter your last name">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="email"
-                                       name="userEmail" required th:field="@{userEmail}"
+                                       name="userEmail" required th:field="*{userEmail}"
                                        placeholder="Enter your email address">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="password"
-                                       name="password" required th:field="@{password}"
+                                       name="password" required th:field="*{password}"
                                        placeholder="Enter your password">
                             </div>
                             <!--                        <div class="mb-3">-->
@@ -55,7 +55,7 @@
                             <!--                        </div>-->
                             <div class="col text-center">
 
-                            <span>Registered already? <a href="/" th:href="@{authenticate/login-form}">
+                            <span>Registered already? <a href="/" th:href="@{/login}">
                                 Login
                             </a></span><br>
                                 <button type="submit" class="btn btn-primary ">Register</button>
